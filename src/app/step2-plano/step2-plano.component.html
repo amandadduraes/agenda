@@ -2,25 +2,10 @@
   <h3>Objetivo {{ i + 1 }}</h3>
 
   <div class="form-row">
-    <input type="text" class="descricao" placeholder="Descrição do problema*">
-    <select class="etapa">
-        <option value="">Etapa</option>
-        </select>
-    <select class="causa">
-        <option value="">Possui causa</option>
-        </select>
-</div>
-
-<div class="form-row">
-    <input type="text" class="resultado" placeholder="Resultado">
-    <select class="prioridade">
-        <option value="">Prioridade</option>
-        </select>
-    <select class="categoria">
-        <option value="">Categoria</option>
-        </select>
-    <button class="btn-adicionar">Adicionar</button>
-</div>
+    <input pInputText class="descricao" placeholder="Descrição do problema*" [(ngModel)]="novoProblema.descricao" />
+    <p-dropdown class="etapa" [options]="etapas" placeholder="Etapa" [(ngModel)]="novoProblema.etapa"></p-dropdown>
+    <p-dropdown class="causa" [options]="causas" placeholder="Possui causa*" [(ngModel)]="novoProblema.possuiCausa"></p-dropdown>
+  </div>
 
   <div class="form-row">
     <input pInputText class="resultado" placeholder="Resultado" [(ngModel)]="novoProblema.resultado" />
