@@ -1,27 +1,35 @@
-# Agenda
+# Sigae Lite
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.5.
+Este é um projeto Angular chamado **Sigae Lite**. A aplicação é projetada para auxiliar na criação e gestão de planos de ação, incluindo funcionalidades para adicionar objetivos, etapas e ações, com uma interface baseada em múltiplas etapas (steps).
 
-## Development server
+## Visão Geral
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+A aplicação utiliza Angular com PrimeNG para criar uma interface amigável, facilitando a navegação entre as etapas e o gerenciamento de objetivos e ações.
 
-## Code scaffolding
+### Estrutura das Etapas (Steps)
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. **Etapa 1**: Definição dos Objetivos
+   - Adicione uma lista de objetivos e descreva cada um. Objetivos selecionados avançam para as próximas etapas.
 
-## Build
+2. **Etapa 2**: Configuração dos Problemas Relacionados a cada Objetivo
+   - Adicione problemas para cada objetivo selecionado, especificando detalhes como descrição, etapa, causa, prioridade, categoria e resultado esperado.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+3. **Etapa 3**: Criação das Ações
+   - Adicione ações para cada problema identificado. A visualização em árvore mostra cada objetivo, problema e suas respectivas ações. A paginação permite navegar pelos objetivos e problemas listados.
 
-## Running unit tests
+## Pré-requisitos
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+- **Node.js** (versão 12 ou superior)
+- **Angular CLI** (versão 14 ou superior)
+- **PrimeNG** para componentes de UI
 
-## Running end-to-end tests
+## Instalação
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+1. Clone o repositório:
 
-## Further help
+   ```bash
+   git clone https://github.com/seu-usuario/sigae-lite.git
+   cd sigae-lite
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+
+
