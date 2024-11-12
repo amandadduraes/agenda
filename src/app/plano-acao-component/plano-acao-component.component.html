@@ -1,0 +1,17 @@
+<app-menu></app-menu>
+
+
+<p-steps [model]="items" [(activeIndex)]="activeIndex" class="steps-container"></p-steps>
+<div class="step-content">
+  <div *ngIf="activeIndex === 0">
+    <app-step1-plano (objetivosSelecionados)="handleObjetivosSelecionados($event)"></app-step1-plano>
+  </div>
+  <div *ngIf="activeIndex === 1">
+    <app-step2-plano [objetivosSelecionados]="objetivosSelecionados"></app-step2-plano>
+    <div class="button-container">
+      <button pButton label="Anterior" (click)="prevStep()" class="nav-button"></button>
+      <button pButton label="Próximo" (click)="nextStep()" class="nav-button"></button>
+    </div>
+  </div>
+  <app-step3-plano *ngIf="activeIndex === 2"  [objetivosSelecionados]="objetivosSelecionados" (finish)="onFinish()" (prev)="prevStep()"></app-step3-plano>
+</div>

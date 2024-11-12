@@ -1,0 +1,54 @@
+<div *ngFor="let objetivo of objetivosSelecionados; let i = index">
+  <h3>Objetivo {{ i + 1 }}</h3>
+
+  <div class="form-row">
+    <input type="text" class="descricao" placeholder="Descrição do problema*">
+    <select class="etapa">
+        <option value="">Etapa</option>
+        </select>
+    <select class="causa">
+        <option value="">Possui causa</option>
+        </select>
+</div>
+
+<div class="form-row">
+    <input type="text" class="resultado" placeholder="Resultado">
+    <select class="prioridade">
+        <option value="">Prioridade</option>
+        </select>
+    <select class="categoria">
+        <option value="">Categoria</option>
+        </select>
+    <button class="btn-adicionar">Adicionar</button>
+</div>
+
+  <div class="form-row">
+    <input pInputText class="resultado" placeholder="Resultado" [(ngModel)]="novoProblema.resultado" />
+    <p-dropdown class="prioridade" [options]="prioridades" placeholder="Prioridade*" [(ngModel)]="novoProblema.prioridade"></p-dropdown>
+    <p-dropdown class="categoria" [options]="categorias" placeholder="Categoria*" [(ngModel)]="novoProblema.categoria"></p-dropdown>
+    <button pButton label="Adicionar" icon="pi pi-check" class="btn-adicionar" (click)="adicionarProblema(i)"></button>
+  </div>
+
+  <p-table [value]="objetivo.problemas">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Descrição do problema</th>
+        <th>Etapa</th>
+        <th>Possui causa</th>
+        <th>Resultado</th>
+        <th>Prioridade</th>
+        <th>Categoria</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-problema>
+      <tr>
+        <td>{{ problema.descricao }}</td>
+        <td>{{ problema.etapa }}</td>
+        <td>{{ problema.possuiCausa ? 'Sim' : 'Não' }}</td>
+        <td>{{ problema.resultado }}</td>
+        <td>{{ problema.prioridade }}</td>
+        <td>{{ problema.categoria }}</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

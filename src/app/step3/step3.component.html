@@ -1,0 +1,22 @@
+<div class="step-content step-3">
+  <form [formGroup]="formGroup">
+    <div class="form-layout">
+      <input pInputText formControlName="address" placeholder="Endereço Completo" class="half-width" />
+      <input pInputText formControlName="city" placeholder="Cidade" class="half-width" />
+
+      <div class="address-fields">
+        <input pInputText formControlName="cep" placeholder="CEP" class="quarter-width" />
+        <input pInputText formControlName="state" placeholder="Estado" class="quarter-width" />
+        <p-dropdown formControlName="country" [options]="countries" placeholder="País" class="quarter-width"></p-dropdown>
+      </div>
+
+      <button pButton class="prev-button" (click)="prevStep()">
+        <i class="pi pi-arrow-left"></i> Anterior
+      </button>
+      <button pButton class="submit-button" (click)="onSubmit()">
+        Concluir
+      </button>
+    </div>
+
+  </form>
+</div>

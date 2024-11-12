@@ -1,0 +1,43 @@
+<div class="step-content">
+  <h2>Criar ações</h2>
+  <p-table [value]="objetivosPaginados" [paginator]="true" [rows]="rowsPerPage" [totalRecords]="objetivosSelecionados.length" [lazy]="true" (onLazyLoad)="carregarObjetivos($event)">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Descrição</th>
+        <th>Etapa</th>
+        <th>Responsável</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-objetivo let-rowIndex="rowIndex">
+      <tr>
+        <td>
+          <p-treeTableToggler *ngIf="objetivo.problemas.length > 0" [rowNode]="rowIndex"></p-treeTableToggler>
+          {{ objetivo.descricao }}
+        </td>
+        <td></td>
+        <td></td>
+        <td class="action-column">
+          <p-menu #menu [model]="itemsMenu"></p-menu>
+
+          <button pButton icon="pi pi-ellipsis-v" (click)="abrirMenu($event, menu)"></button>
+        </td>
+      </tr>
+      <tr *ngFor="let problema of objetivo.problemas" class="problema-row">
+        <td>{{ problema.descricao }}</td>
+        <td>{{ problema.etapa }}</td>
+        <td>{{ problema.responsavel }}</td>
+        <td>
+          <button pButton icon="pi pi-plus" label="Adicionar ação" (click)="adicionarAcao(rowIndex)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <div class="footer-container">
+    <span>{{ objetivosSelecionados.length }} objetivos ao total</span>
+    <div class="button-container">
+      <button pButton label="Anterior" icon="pi pi-arrow-left" (click)="goToPrevious()" class="nav-button"></button>
+      <button pButton label="Concluir" icon="pi pi-check" (click)="finalizarPlano()" class="nav-button"></button>
+    </div>
+  </div>
+</div>

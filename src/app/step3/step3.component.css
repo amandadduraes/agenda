@@ -1,0 +1,72 @@
+.form-layout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: center;
+}
+
+.full-width {
+  flex: 1 1 100%;
+}
+
+.half-width {
+  flex: 1 1 48%;
+}
+
+.quarter-width {
+  flex: 1 1 22%;
+  margin-left: 10px;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+
+
+
+input[pInputText] {
+  background-color: #f9fafb;
+  padding: 10px 15px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  font-size: 14px;
+}
+
+
+
+.prev-button,
+.submit-button {
+  background-color: #007bff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.prev-button:hover,
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.step-container {
+  max-width: 100%;
+  width: 900px;
+  margin: 0 auto;
+}
+
+.p-steps {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+

@@ -1,0 +1,37 @@
+<app-menu></app-menu>
+
+<div class="pessoas-container" *ngIf="!showForm">
+  <button pButton label="Adicionar" icon="pi pi-plus" class="p-button-primary" (click)="toggleForm()"></button>
+
+  <p-table [value]="people" class="pessoas-table" responsiveLayout="scroll">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>E-Mail</th>
+        <th>Escola</th>
+        <th>Endereço</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-person>
+      <tr>
+        <td>{{ person.name }}</td>
+        <td>{{ person.cpf }}</td>
+        <td>{{ person.email }}</td>
+        <td>{{ person.school }}</td>
+        <td>{{ person.address }}</td>
+        <td>
+          <button pButton icon="pi pi-pencil" class="p-button-text p-button-sm" (click)="onEditPerson(person)"></button>
+          <button pButton icon="pi pi-trash" class="p-button-text p-button-sm" (click)="onDeletePerson(person)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>
+
+<div *ngIf="showForm" class="full-page-form">
+  <app-pessoa-form [editPerson]="editPerson"
+  (personAdded)="adicionarPessoa($event)"
+  (personUpdated)="atualizarPessoa($event)">></app-pessoa-form>
+</div>

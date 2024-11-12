@@ -1,0 +1,46 @@
+.input-full-width {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.objective-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.objective-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-around;
+  margin-left: -700px;
+}
+
+.next-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background-color 0.3s;
+}
+
+.next-button .pi-arrow-right {
+  font-size: 16px;
+}
+
+.next-button:hover {
+  background-color: #0056b3;
+}

@@ -1,0 +1,28 @@
+<div class="step-content step-2">
+  <form [formGroup]="formGroup">
+    <div class="form-layout">
+      <input pInputText formControlName="email" placeholder="E-Mail" class="input-full-width" />
+
+      <div formArrayName="phones">
+        <div *ngFor="let phone of phones.controls; let i = index" [formGroupName]="i" class="phone-group">
+          <input pInputText formControlName="phone" placeholder="Telefone {{ i + 1 }}" class="phone-input" />
+          <button pButton class="phone-button" (click)="addPhoneField()">
+            <i class="pi pi-plus"></i>
+          </button>
+          <button pButton class="phone-button" (click)="removePhoneField(i)" *ngIf="phones.length > 1">
+            <i class="pi pi-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div class="navigation-buttons">
+      <button pButton class="prev-button" (click)="prevStep()">
+        <i class="pi pi-arrow-left"></i> Anterior
+      </button>
+      <button pButton class="next-button" (click)="nextStep()">
+        Próximo <i class="pi pi-arrow-right"></i>
+      </button>
+    </div>
+  </form>
+</div>

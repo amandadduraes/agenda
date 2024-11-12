@@ -1,0 +1,28 @@
+<p-steps [model]="items" [(activeIndex)]="activeIndex" class="step-container"></p-steps>
+<div *ngIf="showForm"class="step-content">
+
+
+
+  <app-step1
+    *ngIf="activeIndex === 0"
+    [formGroup]="step1Form"
+    [nextStep]="nextStep.bind(this)"
+    [schools]="schools">
+  </app-step1>
+
+  <app-step2
+    *ngIf="activeIndex === 1"
+    [formGroup]="step2Form"
+    [prevStep]="prevStep.bind(this)"
+    [nextStep]="nextStep.bind(this)"
+    [addPhoneField]="addPhoneField.bind(this)"
+    [removePhoneField]="removePhoneField.bind(this)">
+  </app-step2>
+
+  <app-step3
+    *ngIf="activeIndex === 2"
+    [formGroup]="step3Form"
+    [prevStep]="prevStep.bind(this)"
+    [onSubmit]="onSubmit.bind(this)">
+  </app-step3>
+</div>

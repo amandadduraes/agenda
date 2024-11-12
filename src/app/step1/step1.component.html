@@ -1,0 +1,15 @@
+<div class="step-content step-1">
+  <form [formGroup]="formGroup">
+    <div class="form-layout">
+      <input pInputText formControlName="name" placeholder="Nome" class="half-width" />
+      <input pInputText formControlName="socialName" placeholder="Nome Social" class="half-width" />
+
+      <input pInputText formControlName="cpf" placeholder="CPF" class="quarter-width" />
+      <input pInputText formControlName="cnpj" placeholder="CNPJ" class="quarter-width" />
+      <p-dropdown formControlName="school" [options]="schools" placeholder="Escola" class="quarter-width"></p-dropdown>
+      <button pButton class="next-button" (click)="nextStep()">
+        Próximo <i class="pi pi-arrow-right"></i>
+      </button>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,15 @@
+<h2>Plano</h2>
+<input pInputText placeholder="Descrição do plano*" class="input-full-width" />
+
+<h3>Objetivos</h3>
+<div class="objective-container">
+  <div *ngFor="let objetivo of objetivos; let i = index" class="objective-item">
+    <p-checkbox [(ngModel)]="objetivo.selecionado" binary="true" label="Objetivo {{ i + 1 }}"></p-checkbox>
+    <input pInputText placeholder="Objetivo {{ i + 1 }}" [(ngModel)]="objetivo.descricao" />
+  </div>
+  <div class="button-container">
+    <button pButton class="next-button" (click)="goToNext()" iconPos="right">
+      Próximo <i class="pi pi-arrow-right"></i>
+    </button>
+  </div>
+</div>

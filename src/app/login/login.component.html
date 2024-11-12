@@ -1,0 +1,38 @@
+<div class="login-container">
+  <form class="login-form" (ngSubmit)="onSubmit()">
+    <h2>Login</h2>
+
+    <div class="form-group">
+      <input type="email" [(ngModel)]="email" name="email" placeholder="E-Mail" required />
+    </div>
+
+    <div class="form-group password-group">
+      <input [type]="showPassword ? 'text' : 'password'" [(ngModel)]="password" name="password" placeholder="Senha" required />
+      <span class="toggle-password" (click)="togglePassword()">
+        <i class="{{ showPassword ? 'fas fa-eye-slash' : 'fas fa-eye' }}"></i>
+      </span>
+    </div>
+
+    <div class="form-group captcha-container">
+      <label class="captcha-label">{{ captchaQuestion }}</label>
+      <input type="text" [(ngModel)]="captchaAnswer" name="captchaAnswer" placeholder="Digite sua resposta" required />
+    </div>
+
+    <div *ngIf="showTwoFactor" class="form-group">
+      <label>Insira o código de verificação</label>
+      <input type="text" [(ngModel)]="authCode" name="authCode" placeholder="Código de Verificação" required />
+    </div>
+
+    <button *ngIf="!showTwoFactor" type="submit" class="login-button">Entrar</button>
+    <button *ngIf="showTwoFactor" (click)="validateTwoFactorCode()" class="login-button">Validar Código</button>
+
+    <a *ngIf="!showTwoFactor" (click)="openForgotPasswordModal()" class="forgot-password-link">Esqueci minha senha</a>
+  </form>
+
+  <div class="modal" *ngIf="showForgotPasswordModal">
+    <div class="modal-content">
+      <span class="close-button" (click)="closeForgotPasswordModal()">&times;</span>
+      <p>Um e-mail de recuperação de senha foi enviado para {{ email }}</p>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+.form-row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.descricao, .resultado {
+  flex: 3;
+}
+
+.etapa{
+  flex: 0.4;
+  min-width: 120px;
+}
+.causa {
+  flex: 1;
+  min-width: 120px;
+}
+
+.prioridade{
+  flex: 0.8;
+  min-width: 120px;
+}
+.btn-adicionar {
+  flex: 1 0 auto;
+  padding: 6px 12px;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.btn-adicionar:hover {
+  background-color: #0056b3;
+}

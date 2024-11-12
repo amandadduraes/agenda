@@ -1,0 +1,96 @@
+
+<app-menu></app-menu>
+
+<div class="agenda-container">
+  <div class="side-panel">
+    <div class="mini-calendar">
+      <h3>January</h3>
+      <table class="calendar-table">
+        <tr>
+          <th>m</th>
+          <th>t</th>
+          <th>w</th>
+          <th>t</th>
+          <th>f</th>
+          <th>s</th>
+          <th>s</th>
+        </tr>
+        <tr *ngFor="let week of weeks">
+          <td *ngFor="let day of week" [ngClass]="{ 'today': day === todayDate && currentMonth === todayMonth && currentYear === todayYear }">
+            <span *ngIf="day !== 0">{{ day }}</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+
+    <div class="date-display">
+      <p class="section-title">
+        <img src="path/to/calendar-icon.png" alt="Ícone de Calendário" class="calendar-icon" />
+        Today
+      </p>
+      <ul>
+        <li *ngFor="let event of events" class="event-item" [ngStyle]="{ 'color': event.color }">
+          <span class="event-dot" [ngStyle]="{ 'background-color': event.color }">●</span>
+          <span class="event-title">{{ event.title }}</span>
+          <span class="event-time">{{ event.time }}</span>
+        </li>
+      </ul>
+
+      <p class="section-title">
+        <img src="path/to/calendar-icon.png" alt="Ícone de Calendário" class="calendar-icon" />
+        Tomorrow
+      </p>
+      <ul>
+        <li *ngFor="let event of events" class="event-item" [ngStyle]="{ 'color': event.color }">
+          <span class="event-dot" [ngStyle]="{ 'background-color': event.color }">●</span>
+          <span class="event-title">{{ event.title }}</span>
+          <span class="event-time">{{ event.time }}</span>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div class="main-calendar">
+    <div class="calendar-header">
+      <div class="header-left">
+        <span class="menu-icon">☰</span>
+        <h2>January 2023</h2>
+        <select class="view-selector">
+          <option value="month">Month</option>
+          <option value="week">Week</option>
+          <option value="day">Day</option>
+        </select>
+      </div>
+      <div class="header-right">
+        <button class="search-button">
+          <i class="fas fa-search"></i>
+        </button>
+        <button class="add-event-button">
+          Add event
+          <i class="fas fa-plus-circle"></i>
+        </button>
+
+      </div>
+    </div>
+    <table class="main-calendar-table">
+      <thead>
+      <tr>
+        <th>🌞 Mon</th>
+        <th>🐮 Tue</th>
+        <th>🐪 Wed</th>
+        <th>💼 Thu</th>
+        <th>🍸 Fri</th>
+        <th>🎉 Sat</th>
+        <th>📅 Sun</th>
+      </tr>
+    </thead>
+<tr *ngFor="let week of mainCalendarWeeks">
+      <td *ngFor="let day of week">
+        <span *ngIf="day !== 0">{{ day }}</span>
+      </td>
+    </tr>
+    </table>
+  </div>
+
+</div>
